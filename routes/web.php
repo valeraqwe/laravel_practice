@@ -17,10 +17,20 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('age', function () {
-    return '23';
-});
+Route::get('name','MyPlaceController@index');
 
-Route::get('name', function () {
-    return 'Valera';
-});
+Route::get('age','MyAgeController@index');
+
+Route::get('cats','MyCatsController@index');
+
+Route::get('city','MyCityController@index');
+
+Route::get('country','MyCountryController@index');
+
+Route::get('dogs','MyDogsController@index');
+
+Route::get('street','MyStreetController@index');
+
+Route::get('wife','MyWifeController@index');
+
+Route::get('village','MyVillageController@index');
