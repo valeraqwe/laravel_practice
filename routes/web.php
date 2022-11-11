@@ -20,3 +20,7 @@ Route::get('/', function () {
 Route::get('age', function () {
     return '23';
 });
+
+Route::get('name', function () {
+    return 'Valera';
+});
