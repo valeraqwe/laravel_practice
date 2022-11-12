@@ -19,6 +19,8 @@ Route::get('/', function () {
 
 Route::get('name','MyPlaceController@index');
 
+Route::get('posts','PostController@index');
+
 Route::get('age','MyAgeController@index');
 
 Route::get('cats','MyCatsController@index');
