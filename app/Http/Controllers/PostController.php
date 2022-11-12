@@ -38,10 +38,17 @@ class PostController extends Controller
         foreach ($postsArr as $item) {
             Post::create($item);
         }
-
-
         dd('created');
+    }
 
+    public function update()
+    {
+        $post = Post::find(1);
 
+        $post->update([
+            'title' => '1111 updated',
+            'content' => '1111 updated',
+        ]);
+        dd('updated');
     }
 }
