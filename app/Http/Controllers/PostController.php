@@ -23,15 +23,15 @@ class PostController extends Controller
                 'title' => 'title of post from phpstorm',
                 'content' => 'some interesting content',
                 'image' => 'autumn.jpg',
-                'likes' => '23',
-                'is_published' => '1',
+                'likes' => 23,
+                'is_published' => 1,
             ],
             [
                 'title' => 'another title of post from phpstorm',
                 'content' => 'another some interesting content',
                 'image' => 'another autumn.jpg',
-                'likes' => '33',
-                'is_published' => '1',
+                'likes' => 33,
+                'is_published' => 1,
             ]
         ];
 
@@ -57,5 +57,54 @@ class PostController extends Controller
         $post = Post::withTrashed()->find(2);
         $post->restore();
         dd('deleted');
+    }
+
+    public function firstOrCreate()
+    {
+        $anotherPost = [
+            'title' => 'some post',
+            'content' => 'some content',
+            'image' => 'some autumn.jpg',
+            'likes' => 5000,
+            'is_published' => 0,
+        ];
+
+
+        $post = Post::firstOrCreate([
+            'title' => 'some title phpstorm'
+        ],
+            [
+            'title' => 'some title phpstorm',
+            'content' => 'some content',
+            'image' => 'some autumn.jpg',
+            'likes' => 5000,
+            'is_published' => 0,
+        ]);
+        dump($post->content);
+        dd('finished');
+    }
+
+    public function updateOrCreate()
+    {
+        $anotherPost = [
+            'title' => 'updateorcreate some post',
+            'content' => 'updateorcreate some content',
+            'image' => 'updateorcreate some autumn.jpg',
+            'likes' => 500,
+            'is_published' => 0,
+        ];
+
+        $post = Post::updateOrCreate([
+            'title' => 'some title not phpstorm'
+        ],[
+            'title' => 'some title not phpstorm',
+            'content' => 'its not update some content',
+            'image' => 'its not update some autumn.jpg',
+            'likes' => 500,
+            'is_published' => 0,
+        ]);
+        dump($post->content);
+        dd('finished');
+
     }
 }
