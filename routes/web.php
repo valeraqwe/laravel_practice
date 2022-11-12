@@ -21,6 +21,8 @@ Route::get('name','MyPlaceController@index');
 
 Route::get('posts','PostController@index');
 
+Route::get('posts/create','PostController@create');
+
 Route::get('age','MyAgeController@index');
 
 Route::get('cats','MyCatsController@index');

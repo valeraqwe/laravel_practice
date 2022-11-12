@@ -15,4 +15,33 @@ class PostController extends Controller
         }
         dd('end');
     }
+
+    public function create()
+    {
+        $postsArr = [
+            [
+                'title' => 'title of post from phpstorm',
+                'content' => 'some interesting content',
+                'image' => 'autumn.jpg',
+                'likes' => '23',
+                'is_published' => '1',
+            ],
+            [
+                'title' => 'another title of post from phpstorm',
+                'content' => 'another some interesting content',
+                'image' => 'another autumn.jpg',
+                'likes' => '33',
+                'is_published' => '1',
+            ]
+        ];
+
+        foreach ($postsArr as $item) {
+            Post::create($item);
+        }
+
+
+        dd('created');
+
+
+    }
 }
