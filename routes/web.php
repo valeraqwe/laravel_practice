@@ -17,27 +17,16 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('name','MyPlaceController@index');
-
-Route::get('posts','PostController@index');
+//Post route
+Route::get('posts','PostController@index')->name('post.index');
 Route::get('posts/create','PostController@create');
 Route::get('posts/update','PostController@update');
 Route::get('posts/delete','PostController@delete');
 Route::get('posts/first_or_create','PostController@firstOrCreate');
 Route::get('posts/update_or_create','PostController@updateOrCreate');
+//
+Route::get('main','MainController@index')->name('main.index');
+Route::get('contacts','ContactController@index')->name('contact.index');
+Route::get('about','AboutController@index')->name('about.index');
 
-Route::get('age','MyAgeController@index');
 
-Route::get('cats','MyCatsController@index');
-
-Route::get('city','MyCityController@index');
-
-Route::get('country','MyCountryController@index');
-
-Route::get('dogs','MyDogsController@index');
-
-Route::get('street','MyStreetController@index');
-
-Route::get('wife','MyWifeController@index');
-
-Route::get('village','MyVillageController@index');
