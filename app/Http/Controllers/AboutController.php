@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Post;
 use Illuminate\Http\Request;
 
-class MyCityController extends Controller
+class AboutController extends Controller
 {
     public function index()
     {
-        return  'Odesa';
+        return view('about');
     }
 }
